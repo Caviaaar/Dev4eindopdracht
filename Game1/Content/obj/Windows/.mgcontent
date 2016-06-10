@@ -4,7 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/Marcel/Documents/Visual Studio 2015/Projects/Game1/Game1/Content/Arial.spritefont</File>
-    <File>D:/Marcel/Documents/Visual Studio 2015/Projects/Game1/Game1/Content/Courier.spritefont</File>
+    <File>D:/Marcel/Documents/GitHub/Dev4eindopdracht/Game1/Content/Arial.spritefont</File>
+    <File>D:/Marcel/Documents/GitHub/Dev4eindopdracht/Game1/Content/Courier.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>

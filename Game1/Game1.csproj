@@ -42,7 +42,7 @@
     <Compile Include="factory.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="gameState.cs" />
-    <Compile Include="Option.cs" />
+    <Compile Include="Visitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>

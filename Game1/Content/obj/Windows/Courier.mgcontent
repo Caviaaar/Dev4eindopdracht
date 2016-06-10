@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/Marcel/Documents/Visual Studio 2015/Projects/Game1/Game1/Content/Courier.spritefont</SourceFile>
+  <SourceFile>D:/Marcel/Documents/GitHub/Dev4eindopdracht/Game1/Content/Courier.spritefont</SourceFile>
   <SourceTime>2016-06-08T23:10:44.7924647+02:00</SourceTime>
-  <DestFile>D:/Marcel/Documents/Visual Studio 2015/Projects/Game1/Game1/Content/bin/Windows/Courier.xnb</DestFile>
-  <DestTime>2016-06-08T23:10:45.6232932+02:00</DestTime>
+  <DestFile>D:/Marcel/Documents/GitHub/Dev4eindopdracht/Game1/Content/bin/Windows/Courier.xnb</DestFile>
+  <DestTime>2016-06-10T00:43:36.5098544+02:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2016-03-30T08:36:08+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
