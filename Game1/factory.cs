@@ -7,28 +7,20 @@ namespace Game1
   {
     public abstract  IElement Factory();
   }
-  class ConcreteButton : Creator
+  class ConcreteLabelButton : Creator
   {
     private Texture2D rectangle;
-    private int posX;
-    private int posY;
-    private int buttonHeight;
-    private int buttonWidth;
     private Color iColor;
     private Color hColor;
     private SpriteFont font;
     private Rectangle buttonshape;
     private string Name;
 
-    public ConcreteButton(string Name, Texture2D rectangle, int posX, int posY, int buttonHeight, int buttonWidth,
+    public ConcreteLabelButton(string Name, Texture2D rectangle, int posX, int posY, int buttonHeight, int buttonWidth,
       Color iColor, Color hColor, SpriteFont font)
     {
       this.Name = Name;
       this.rectangle = rectangle;
-      this.posX = posX;
-      this.posY = posY;
-      this.buttonHeight = buttonHeight;
-      this.buttonWidth = buttonWidth;
       this.iColor = iColor;
       this.hColor = hColor;
       this.font = font;
@@ -39,7 +31,7 @@ namespace Game1
 
     public override IElement Factory()
     {
-      return new Button(Name , rectangle, buttonshape, iColor, hColor, font);
+      return new LabelButton(Name , rectangle, buttonshape, iColor, hColor, font);
     }
   }
   class ConcreteLabel : Creator
@@ -64,7 +56,23 @@ namespace Game1
     {
       return new Label(text , position, iColor, font);
     }
+  }
+  class ConcreteButton :Creator
+  {
+    private Color iColor;
+    private Rectangle buttonshape;
+    private Texture2D rectangle;
 
-
+    public ConcreteButton(Texture2D rectangle, int posX, int posY, int buttonHeight, int buttonWidth,
+      Color iColor)
+    {
+      this.rectangle = rectangle;
+      this.buttonshape = new Rectangle(posX,posY,buttonWidth,buttonHeight);
+      this.iColor = iColor;
+    }
+    public override IElement Factory()
+    {
+      return new Button(rectangle, buttonshape, iColor);
+    }
   }
 }

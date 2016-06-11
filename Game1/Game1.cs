@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -14,7 +15,6 @@ namespace Game1
     SpriteFont font;
     Texture2D whiteRectangle ;
     gameState GameState;
-   // Vector2 MousePosition;
     public Game1()
     {
       graphics = new GraphicsDeviceManager(this);

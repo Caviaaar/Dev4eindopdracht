@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Threading;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -19,12 +21,11 @@ namespace Game1
     public gameState(Texture2D whiteTexture2D, SpriteFont font)
     { 
       this.whitePixel = whiteTexture2D;
-      creators.Add(new ConcreteButton("The", whitePixel, 50, 100, 50, 200, Color.Blue, Color.Black, font));
-      creators.Add(new ConcreteButton("World", whitePixel, 50, 5, 50, 200, Color.GreenYellow, Color.Red, font));// = new ConcreteButton("hello world", whitePixel, 50 , 5 , 50, 200, Color.GreenYellow, Color.Red, font);
-     // creators[1] = new ConcreteLabel("BYE BYE My DARLING", 250, 150, Color.Black, font);
-     // creators[2] = new ConcreteButton("This Ends Now", whitePixel, 50, 250, 50, 200, Color.Blue, Color.Red, font);
-      creators.Add(new ConcreteButton("ends", whitePixel, 50, 250, 50, 200, Color.Blue, Color.Red, font));
+      creators.Add(new ConcreteLabelButton("The", whitePixel, 50, 100, 50, 200, Color.Blue, Color.Black, font));
+      creators.Add(new ConcreteLabelButton("World", whitePixel, 50, 5, 50, 200, Color.GreenYellow, Color.Red, font));
+      creators.Add(new ConcreteLabelButton("ends", whitePixel, 50, 250, 50, 200, Color.Blue, Color.Red, font));
       creators.Add(new ConcreteLabel("This is the world we life in",50,150,Color.DarkCyan,font));
+      creators.Add(new ConcreteButton(whiteTexture2D,250,135,20,155,Color.Black));
 
     }
 
@@ -37,7 +38,7 @@ namespace Game1
       {
         IElement Element =  c.Factory();
         Element.Visit(guivisitor);
-      }
+        }
     }
 
     public void Draw(SpriteBatch spriteBatch)

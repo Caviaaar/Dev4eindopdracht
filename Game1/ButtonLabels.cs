@@ -17,14 +17,13 @@ namespace Game1
    
   }
  
-  class Button : IElement
+  class LabelButton : IElement
   {
     private string Name;
     private Texture2D rectangle;
     private Rectangle buttonshape;
     private Color iColor;
-    private Color bColor;
-    private Color hColor;
+    private Color fColor;
     private SpriteFont font;
     private Label label;
     private Vector2 fontpos;
@@ -32,20 +31,19 @@ namespace Game1
     private MouseState mouse;
 
 
-    public Button(string Name, Texture2D  rectangle, Rectangle buttonshape, Color iColor, Color hColor, SpriteFont font)
+    public LabelButton(string Name, Texture2D  rectangle, Rectangle buttonshape, Color iColor, Color fColor, SpriteFont font)
     {
       this.Name = Name;
       this.rectangle = rectangle;
       this.iColor = iColor;
-      this.hColor = hColor;
+      this.fColor =fColor;
       this.buttonshape = buttonshape;
-      this.bColor = iColor;
       this.font = font;
       // font mid calulation
       this.textsize = font.MeasureString(Name);
       this.fontpos = new Vector2((int)((buttonshape.X + buttonshape.Width / 2) -(textsize.X / 2)),(int)((buttonshape.Y + buttonshape.Height / 2) -(textsize.Y / 2)));
-     
-      this.label = new Label(Name, fontpos ,hColor,font);
+      
+      this.label = new Label(Name, fontpos ,fColor, font);
     }
 
    
@@ -54,7 +52,7 @@ namespace Game1
 
     public override void Draw(SpriteBatch spriteBatch)
     {
-      spriteBatch.Draw(rectangle, buttonshape , bColor);
+      spriteBatch.Draw(rectangle, buttonshape , iColor);
       label.Draw(spriteBatch);
     }
     
@@ -62,7 +60,7 @@ namespace Game1
     {
       
       this.mouse = mouse;
-      visitor.onMyButton(this, mouse, buttonshape ,Name);
+      visitor.onMyLabelButton(this, mouse, buttonshape ,Name);
     }
   }
   class Label : IElement
@@ -94,5 +92,37 @@ namespace Game1
       visitor.onMyLabel(this);  
     }
 
+  }
+  class Button : IElement
+  {
+    private Texture2D rectangle;
+    private Rectangle buttonshape;
+    private Color iColor;
+    private MouseState mouse;
+
+
+    public Button(Texture2D rectangle, Rectangle buttonshape, Color iColor)
+    {
+      this.rectangle = rectangle;
+      this.iColor = iColor;
+      this.buttonshape = buttonshape;
+      }
+
+
+    public override void Update(float dt)
+    { }
+
+    public override void Draw(SpriteBatch spriteBatch)
+    {
+      spriteBatch.Draw(rectangle, buttonshape, iColor);
+     
+    }
+
+    public override void Visit(IGuiVisitor visitor)
+    {
+
+      this.mouse = mouse;
+      visitor.onMyButton(this, mouse, buttonshape);
+    }
   }
 }
