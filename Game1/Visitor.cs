@@ -56,11 +56,11 @@ namespace Game1
       this.mouse = mouse;
       mouse = Mouse.GetState();
       this.MousePosition = new Vector2(mouse.X, mouse.Y);
-      OnClickButton( mouse, MousePosition,  buttonshape);
+      onClickButton( mouse, MousePosition,  buttonshape);
       
     }
 
-    public void OnClickButton(MouseState mouse, Vector2 MousePosition, Rectangle buttonshape)
+    public void onClickButton(MouseState mouse, Vector2 MousePosition, Rectangle buttonshape)
     {
      
       if (MousePosition.X >= buttonshape.X && MousePosition.X <= (buttonshape.X + buttonshape.Width) &&
@@ -78,6 +78,8 @@ namespace Game1
     {
       Thread.Sleep(90);
     }
+
+
   }
 }
 
