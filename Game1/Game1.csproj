@@ -63,6 +63,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Content\Arial.spritefont" />
     <None Include="Content\Courier.spritefont" />
   </ItemGroup>

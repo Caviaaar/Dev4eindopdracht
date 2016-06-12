@@ -21,10 +21,10 @@ namespace Game1
     public gameState(Texture2D whiteTexture2D, SpriteFont font)
     { 
       this.whitePixel = whiteTexture2D;
-      creators.Add(new ConcreteLabelButton("The", whitePixel, 50, 100, 50, 200, Color.Blue, Color.Black, font));
-      creators.Add(new ConcreteLabelButton("World", whitePixel, 50, 5, 50, 200, Color.GreenYellow, Color.Red, font));
-      creators.Add(new ConcreteLabelButton("ends", whitePixel, 50, 250, 50, 200, Color.Blue, Color.Red, font));
-      creators.Add(new ConcreteLabel("This is the world we life in",50,150,Color.DarkCyan,font));
+      creators.Add(new ConcreteLabelButton("Button1", whitePixel, 50, 100, 50, 200, Color.Blue, Color.Black, font));
+      creators.Add(new ConcreteLabelButton("Button 2", whitePixel, 50, 5, 50, 200, Color.GreenYellow, Color.Red, font));
+      creators.Add(new ConcreteLabelButton("Button 3", whitePixel, 50, 250, 50, 200, Color.YellowGreen, Color.Red, font));
+      creators.Add(new ConcreteLabel("De kat krapt de krullen van de trap",50,150,Color.DarkCyan,font));
       creators.Add(new ConcreteButton(whiteTexture2D,250,135,20,155,Color.Black));
 
     }

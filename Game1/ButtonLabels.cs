@@ -59,7 +59,6 @@ namespace Game1
     public override void Visit(IGuiVisitor visitor)
     {
       
-      this.mouse = mouse;
       visitor.onMyLabelButton(this, mouse, buttonshape ,Name);
     }
   }
