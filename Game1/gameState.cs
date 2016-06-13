@@ -10,7 +10,7 @@ namespace Game1
 {
   class gameState : IComponent
   {
-    private List<Creator> creators = new List<Creator>();
+    private List<Factory> creators = new List<Factory>();
     Guivisitor guivisitor = new Guivisitor();
     
  
@@ -34,18 +34,18 @@ namespace Game1
       
       MouseState state = Mouse.GetState();
       Vector2 mouse = new Vector2(state.X, state.Y);
-      foreach (Creator c in creators)
+      foreach (Factory c in creators)
       {
-        IElement Element =  c.Factory();
+        IElement Element =  c.Creator();
         Element.Visit(guivisitor);
         }
     }
 
     public void Draw(SpriteBatch spriteBatch)
     {
-      foreach (Creator c in creators)
+      foreach (Factory c in creators)
       {
-        IElement Element = c.Factory();
+        IElement Element = c.Creator();
         Element.Draw(spriteBatch);
       }
 

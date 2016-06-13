@@ -76,7 +76,7 @@ namespace Game1
 
     public void Wait()
     {
-      Thread.Sleep(90);
+      Thread.Sleep(100);
     }
 
 

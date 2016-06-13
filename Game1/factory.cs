@@ -3,11 +3,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
 {
-  abstract class Creator
+  abstract class Factory
   {
-    public abstract  IElement Factory();
+    public abstract  IElement Creator();
   }
-  class ConcreteLabelButton : Creator
+  class ConcreteLabelButton : Factory
   {
     private Texture2D rectangle;
     private Color iColor;
@@ -29,12 +29,12 @@ namespace Game1
 
     
 
-    public override IElement Factory()
+    public override IElement Creator()
     {
       return new LabelButton(Name , rectangle, buttonshape, iColor, hColor, font);
     }
   }
-  class ConcreteLabel : Creator
+  class ConcreteLabel : Factory
   {
     private int posX;
     private int posY;
@@ -52,12 +52,12 @@ namespace Game1
       this.font = font;
       this.position = new Vector2(posX, posY);
     }
-    public override IElement Factory()
+    public override IElement Creator()
     {
       return new Label(text , position, iColor, font);
     }
   }
-  class ConcreteButton :Creator
+  class ConcreteButton : Factory
   {
     private Color iColor;
     private Rectangle buttonshape;
@@ -70,7 +70,7 @@ namespace Game1
       this.buttonshape = new Rectangle(posX,posY,buttonWidth,buttonHeight);
       this.iColor = iColor;
     }
-    public override IElement Factory()
+    public override IElement Creator()
     {
       return new Button(rectangle, buttonshape, iColor);
     }
